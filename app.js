@@ -10,10 +10,12 @@ const app = express();
  *  console.log("This is middleware running");
  * });
  */
+
 //ROUTES
 app.get("/", (req, res) => {
   res.send("We are on home");
 });
+
 app.get("/posts", (req, res) => {
   res.send("We are on post");
 });
