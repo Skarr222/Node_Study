@@ -55,4 +55,12 @@ router.delete("/:postId", async (req, res) => {
   }
 });
 
+//Update post
+router.patch("/:postId", async (req, res) => {
+  try {
+    const patchPost = await Post.updateOne({ _id: req.params.postId });
+  } catch (err) {
+    console.log({ message: err });
+  }
+});
 module.exports = router;
