@@ -1,9 +1,11 @@
 const http = require("http");
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 require("dotenv/config");
-
 const app = express();
+
+app.use(bodyParser.json());
 
 /*
  * MiddLewares
@@ -17,6 +19,7 @@ const app = express();
 const postsRoute = require("./routes/posts");
 
 app.use("/posts", postsRoute);
+
 //app.use("/user", userRoute);
 
 //ROUTES
